@@ -1,0 +1,17 @@
+version: "3.8"
+services: 
+    nodejs:
+        image: my-node-app
+        ports:
+            - 3250:3333
+        build: 
+            context: ./node1  
+        volumes:
+            - ./node1:/app          
+    
+    pythonapp:
+        image: flask-app
+        ports:
+            - 3251:5000
+        build:
+            context: ./python
